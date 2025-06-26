@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My AI Development</title>
+</head>
+<body>
+    <main>
+        <h1>Consulta de Artigos </h1>
+
+        <div class="container">
+            <form method="POST">
+                <label for="pergunta">Digite sua Pergunta: </label>
+                <input type="text" id="pergunta" name="pergunta" placeholder="Ex: Me retorne artigos sobre Python" required>
+                <button type="submit">Buscar</button>
+            </form>
+
+            {% if artigos %}
+                <h2>Resultados Encontrados:</h2>
+                {% for artigo in artigos %}
+                <div class="card">
+                    <h3>{{ artigo.Titulo }}</h3>
+                    <p><strong>Categoria:</strong> {{ artigo.Categoria }}</p>
+                    <p><a href="{{ artigo.Link }}" target="_blank">🔗 Acessar Artigo</a></p>
+                </div>
+                {% endfor %}
+            {% endif %}
+
+        </div>
+        
+
+    </main>
+
+    <footer>
+
+    </footer>
+    
+</body>
+</html>
