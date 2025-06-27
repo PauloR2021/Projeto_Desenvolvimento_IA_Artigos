@@ -10,7 +10,7 @@ import json
 # Carrega .env
 load_dotenv()
 
-dados= []
+
 
 # Configura o modelo da Groq
 llm = Groq(model="llama-3.3-70b-versatile", api_key=os.environ.get("GROQ_API_KEY"))
@@ -20,7 +20,7 @@ def consulta_artigos(titulo: str) -> str:
     client = arxiv.Client()
     busca = arxiv.Search(
         query=titulo,
-        max_results=5,
+        max_results=3,
         sort_by=arxiv.SortCriterion.Relevance
     )
     resultados = [
@@ -45,6 +45,7 @@ agent = AgentRunner(agent_worker)
 
 # Função principal
 def executar_consulta(pergunta: str):
+    dados= []
     # Extrair o termo de busca da pergunta (exemplo simples para "sobre X")
     termo = pergunta.replace("Me retorne artigos sobre", "").strip()
 

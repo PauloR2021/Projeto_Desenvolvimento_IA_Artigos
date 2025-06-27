@@ -1,0 +1,125 @@
+:root{
+    --cor-background-body: #f5f7fa;
+    --cor-background-main: #ffffff;
+    --cor-h1: #333;
+    --cor-background-button: #0066cc;
+    --cor-background-button-hover: #004999;
+    --cor-background-card: #fdfdfd;
+    --cor-card-a: #0066cc;
+
+   
+}
+
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: var(--cor-background-body);
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color:var(--cor-background-main);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    color: var(--cor-h1);
+}
+
+h1 i {
+  margin-right: 10px; /* espaço entre o ícone e o texto */
+  color: #2c3e50;     /* cor do ícone */
+  vertical-align: middle; /* alinha o ícone verticalmente */
+  font-size: 1.2em;   /* tamanho do ícone relativo ao texto */
+}
+
+
+.container{
+    margin-top: 20px;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label{
+    font-weight: bold;
+}
+
+input[type="text"]{
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button[type="submit"]{
+    padding: 10px 20px;
+    background-color:var(--cor-background-button);
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button[type="submit"]{
+    background-color: var(--cor-background-button-hover);
+}
+
+button i {
+  margin-left: 20px; /* espaço entre ícone e texto */
+  vertical-align: middle; /* alinha verticalmente com o texto */
+  font-size: 16px; /* tamanho do ícone */
+}
+
+h2{
+    margin-top: 30px;
+    color:#444;
+}
+
+.card{
+    background-color:var(--cor-background-card);
+    border: 1px solid #ddd;
+    border-left: 5px solid #0066cc;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+    transition: box-shadow 0.3s ease;
+}
+
+.card:hover{
+    box-shadow: 0 2px 8px rgba(0, 0reen, 0, 0.1);
+}
+
+.card h3{
+    margin-top: 0;
+}
+
+.card a{
+    color: var(--cor-card-a);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card a:hover{
+    text-decoration: underline;
+}
+
+footer{
+    text-align: center;
+    padding: 20px;
+    color: #777;
+    font-size: 0.9rem;
+
+}

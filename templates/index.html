@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My AI Development</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
 </head>
 <body>
     <main>
@@ -11,26 +18,27 @@
 
         <div class="container">
             <form method="POST">
-                <label for="pergunta">Digite um Tma para os Artigos:  </label>
+                <label for="pergunta">Digite um Tema para os Artigos:  </label>
                 <input type="text" id="pergunta" name="pergunta" placeholder="Ex: Me retorne artigos sobre Python" required>
-                <button type="submit">Buscar</button>
+                <button type="submit"> Buscar<i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
 
             {% if artigos %}
                 <h2>Resultados Encontrados:</h2>
                 {% for artigo in artigos %}
-                <div class="card">
-                    <h3>{{ artigo.Titulo }}</h3>
-                    <p><strong>Categoria:</strong> {{ artigo.Categoria }}</p>
-                    <p><a href="{{ artigo.Link }}" target="_blank">🔗 Acessar Artigo</a></p>
-                </div>
+                    <div class="card">
+                        <h3><i class="fa-regular fa-newspaper"></i> - {{ artigo.Titulo }}</h3>
+                        <p><strong>Categoria:</strong> {{ artigo.Categoria }}</p>
+                        <p><a href="{{ artigo.Link }}" target="_blank">🔗 Acessar Artigo</a></p>
+                    </div>
                 {% endfor %}
-        {% endif %}
+            {% endif %}
 
         </div>
         
 
     </main>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
 
     <footer>
 

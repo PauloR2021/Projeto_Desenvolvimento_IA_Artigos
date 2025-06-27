@@ -9,13 +9,17 @@ app = Flask(__name__)
 # Criando a Rota para a Função da IA 
 @app.route("/", methods=['GET','POST'])
 def index():
-    
-    artigos =[]
+    artigos = []  
+
     if request.method == 'POST':
         pergunta = request.form['pergunta']
-        resultado_json = executar_consulta(pergunta = pergunta)
+        """artigos = [
+            {"Titulo": f"Artigo sobre {pergunta}", "Categoria": "Teste", "Link": "https://exemplo.com"}
+        ]"""
+        resultado_json = executar_consulta(pergunta=pergunta)
         artigos = json.loads(resultado_json)
-    return render_template('index.html', artigos = artigos)
+
+    return render_template('index.html', artigos=artigos)
 
 
 # Função para Chamar o Flask
