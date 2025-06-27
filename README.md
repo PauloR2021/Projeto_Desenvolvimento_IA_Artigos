@@ -1,6 +1,6 @@
 <div align="center">
 
-#🚀 Projeto: Consulta de Artigos Científicos com IA e Flask
+# 🚀 Projeto: Consulta de Artigos Científicos com IA e Flask
 </div>
 
 ## 📌 Descrição  
